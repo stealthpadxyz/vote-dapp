@@ -23,6 +23,21 @@ const sidebarItems: SidebarItemType[] = [
     link: "/create-poll",
     icon: <PlusIcon className="w-5 h-5" />,
   },
+  {
+    name: "StealthPad",
+    link: "https://stealthpad.xyz/",
+    icon: <UserIcon className="w-5 h-5" />,
+  },
+  {
+    name: "StealthSwap",
+    link: "https://stealthswap.trade/",
+    icon: <UserIcon className="w-5 h-5" />,
+  },  
+   {
+    name: "StealthChain",
+    link: "https://stealthchain.org/",
+    icon: <UserIcon className="w-5 h-5" />,
+  }, 
 ];
 
 export default function Sidebar() {

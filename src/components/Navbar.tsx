@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between h-full px-4 lg:px-8">
         <ToggleSidebarButton className="inline-flex lg:hidden" />
         <a href="/" className="transition-opacity hover:opacity-75">
-          Vote $STEALTH
+          Stealth Vote
         </a>
         <div className="flex gap-5">
           {/* <NetworkSelector className="hidden lg:inline-flex" /> */}

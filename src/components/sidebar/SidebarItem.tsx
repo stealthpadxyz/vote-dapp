@@ -72,7 +72,17 @@ export default function SidebarItem({ item }: { item: SidebarItemType }) {
                 key={subKey}
                 asChild
               >
-                <Link to={subItem.link}>{subItem.name}</Link>
+                {subItem.link.startsWith("https") ? ( // Check if it's an external link
+                  <a
+                    href={subItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer" // Add rel attribute for security
+                  >
+                    {subItem.name}
+                  </a>
+                ) : (
+                  <Link to={subItem.link}>{subItem.name}</Link>
+                )}
               </SidebarItemLink>
             ))}
           </div>
@@ -82,7 +92,11 @@ export default function SidebarItem({ item }: { item: SidebarItemType }) {
   } else if (item.type === "external") {
     return (
       <SidebarItemLink className="justify-start" asChild>
-        <a href={item.link} target="_blank">
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer" // Add rel attribute for security
+        >
           {item.icon}
           <span>{item.name}</span>
         </a>
@@ -95,11 +109,23 @@ export default function SidebarItem({ item }: { item: SidebarItemType }) {
         asChild
         active={item.link === pathname}
       >
-        <Link to={item.link}>
-          {item.icon}
-          <span>{item.name}</span>
-        </Link>
+        {item.link.startsWith("https") ? ( // Check if it's an external link
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer" // Add rel attribute for security
+          >
+            {item.icon}
+            <span>{item.name}</span>
+          </a>
+        ) : (
+          <Link to={item.link}>
+            {item.icon}
+            <span>{item.name}</span>
+          </Link>
+        )}
       </SidebarItemLink>
     );
   }
 }
+

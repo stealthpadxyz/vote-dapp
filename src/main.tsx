@@ -6,6 +6,8 @@ import { Providers } from "./providers.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Providers>
+    
     <App />
+    
   </Providers>
 );
